@@ -4,23 +4,12 @@ organization := "org.scoverage"
 
 version := "1.6.2"
 
-scalaVersion := "3.2.2-RC2"
+scalaVersion := "3.3.0-RC3"
 
-crossScalaVersions := Seq("2.13.9", "3.2.2-RC2")
+crossScalaVersions := Seq("2.13.9", "3.3.0-RC3")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
-scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Werror")
-
-libraryDependencies ++= Seq(
-  "commons-io"             %  "commons-io"    % "2.11.0",
-  "com.typesafe.akka"      %% "akka-actor"    % "2.6.20",
-  "com.typesafe.akka"      %% "akka-testkit"  % "2.6.20" % "test",
-  "org.scalatest"          %% "scalatest"     % "3.2.14" % "test"
-)
-
-import org.scoverage.coveralls.Imports.CoverallsKeys._
-coverallsTokenFile := Some("./.coverallsToken")
 
 coverageHighlighting := true
 coverageFailOnMinimum := false
